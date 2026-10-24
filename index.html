@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trivia Lab</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            margin: 0;
+            padding: 1.5rem;
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            color: #1f2937;
+            background: #f1f5f9;
+        }
+
+        main {
+            width: min(100%, 560px);
+            padding: 2rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            background: #fff;
+            box-shadow: 0 12px 32px rgb(15 23 42 / 8%);
+        }
+
+        h1 {
+            margin: 0;
+            color: #4338ca;
+        }
+
+        #progress {
+            margin-bottom: 0.25rem;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        #timer {
+            margin-top: 0;
+            color: #b45309;
+            font-weight: 700;
+        }
+
+        #question {
+            margin: 1.5rem 0 1rem;
+            font-size: 1.25rem;
+        }
+
+        #choices {
+            display: grid;
+            gap: 0.65rem;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #c7d2fe;
+            border-radius: 8px;
+            color: #312e81;
+            background: #eef2ff;
+            font: inherit;
+            text-align: left;
+            cursor: pointer;
+            transition: background 150ms ease, transform 150ms ease;
+        }
+
+        button:hover {
+            background: #e0e7ff;
+            transform: translateY(-1px);
+        }
+
+        button:focus-visible {
+            outline: 3px solid #818cf8;
+            outline-offset: 2px;
+        }
+
+        #feedback {
+            min-height: 1.75em;
+            margin-bottom: 0;
+            font-weight: 700;
+        }
+
+        #results {
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        @media (max-width: 480px) {
+            main {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Easy Word Quiz</h1>
+        <p>Answer simple everyday words. You have 15 seconds per question!</p>
+        <p id="progress"></p>
+        <p id="timer"></p>
+        <h2 id="question"></h2>
+        <div id="choices"></div>
+        <p id="feedback" aria-live="polite"></p>
+        <section id="results" hidden>
+            <h2>GAME OVER!</h2>
+            <p id="score"></p>
+            <p id="correct-count"></p>
+        </section>
+    </main>
+
+    <script src="trivia.js" defer></script>
+</body>
+</html>
